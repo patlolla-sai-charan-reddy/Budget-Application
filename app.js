@@ -48,7 +48,29 @@ var UIController = (function() {
 
 var controller = (function(budgetCtrl, UICtrl){
 	
-	var DOM = UICtrl.getDOMstrings();
+	var setupEventListeners = function() {
+		
+		var DOM = UICtrl.getDOMstrings();
+		
+		document.querySelector(DOM.inputBtn).addEventListener('click', ctrlAddItem);
+	
+	
+	//When user press Enter or Return key
+	
+		document.addEventListener('keypress', function(event) {
+		
+		if(event.keyCode === 13 || event.which === 13) {
+			
+			ctrlAddItem();
+		}
+		
+
+	});
+		
+	};
+	
+	
+	
 	
 	//As Part of DRY
 	
@@ -58,7 +80,6 @@ var controller = (function(budgetCtrl, UICtrl){
 		
 			var input = UICtrl.getInput();
 			
-			console.log(input);
 			
 		
 		//2. Add the Item to the Budget Controller
@@ -81,31 +102,20 @@ var controller = (function(budgetCtrl, UICtrl){
 		//5.Display the Budget on the UI
 		
 		
-	}
+	};
 
-	document.querySelector(DOM.inputBtn).addEventListener('click', ctrlAddItem);
-	
-	
-	//When user press Enter or Return key
-	
-	document.addEventListener('keypress', function(event) {
-		
-		if(event.keyCode === 13 || event.which === 13) {
-			
-			ctrlAddItem();
+	return {
+		init: function() {
+			console.log('Application has started.');
+			setupEventListeners();
 		}
-		
-		
-		
-		
-	});
-	
+	};
 	
 	
 })(budgetController, UIController);
 
 
-
+controller.init();
 
 
 
