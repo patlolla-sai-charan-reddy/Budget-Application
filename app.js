@@ -37,7 +37,7 @@ var budgetController = (function() {
 			
 			var newItem, ID;
 			
-			ID = 0;
+			ID = data.allItems[type][data.allItems[type].length -1];
 			
 			if(type === 'exp') {
 				
