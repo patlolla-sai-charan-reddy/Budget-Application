@@ -17,10 +17,9 @@ var budgetController = (function() {
 		this.description = description;
 		this.value = value;
 	};
-	
-	
-	
-	
+
+
+
 	//Data Structure
 	
 	var data = {
@@ -129,34 +128,33 @@ var controller = (function(budgetCtrl, UICtrl){
 		//1. Get the field Input Data
 		
 			var input = UICtrl.getInput();
-			
-			
-		
+
+
+
 		//2. Add the Item to the Budget Controller
-		
-		
-		
-		
-		
+
+
+
+
+
 		//3. Add the item to the UI
-		
-		
-		
-		
+
+
+
+
 		//4.Calculate the budget
-		
-		
-		
-		
-		
+
+
+
+
+
 		//5.Display the Budget on the UI
-		
+
 		
 	};
 
 	return {
 		init: function() {
-			console.log('Application has started.');
 			setupEventListeners();
 		}
 	};
