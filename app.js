@@ -19,7 +19,6 @@ var budgetController = (function() {
 	};
 
 
-
 	//Data Structure
 	
 	var data = {
